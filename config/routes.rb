@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :posts, only: [:new, :create, :index]
+  get 'posts/new'
+
   root                'sessions#new'
   
   

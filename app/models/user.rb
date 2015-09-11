@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
   has_secure_password
+   has_many :posts
   
  # Returns a random token.
   def User.new_remember_token
@@ -25,4 +26,6 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_token, nil)
   end
+  
+  
 end
