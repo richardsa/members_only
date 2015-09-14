@@ -3,14 +3,14 @@
 
 <div class="posts">
   <% @posts.each do |post| %>
-  <% if logged_in? %>
-    <p>Posted by: <%= post.user.username%></p>
-  
-  <% end %>
     <p>
       <h3><%=post.title %></h3>
       <p><%=post.body %></p>
     </p>
+    <% if logged_in? %>
+      <p>Posted by: <%= post.user.username %></p>
+    <% end %>
+    <hr />
   <% end %>
 <% if logged_in? %>
  <%= link_to "Create a Post", new_post_path %>

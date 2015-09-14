@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       flash.now[:success] = 'Welcome Back!'
       log_in user
       #quitremember user
-      redirect_to root_path
+      redirect_to posts_path
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
